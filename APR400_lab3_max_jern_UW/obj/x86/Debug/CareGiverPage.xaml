@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="APR400_lab3_max_jern_UW.CareGiverPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:APR400_lab3_max_jern_UW"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <NavigationView x:ConnectionId='2' x:Name="navCareGiving">
+            <NavigationView.MenuItems>
+                <NavigationViewItem x:ConnectionId='3' x:Name="mnuCareGive" Icon="Home" Content="Care Givers" Tag="CareGiver"                            />
+                <NavigationViewItem x:ConnectionId='4' x:Name="mnuCareTake" Icon="Home" Content="Care Recipient" Tag="CareTaker"                            />
+                <NavigationViewItem x:ConnectionId='5' x:Name="mnuAddGive" Icon="Add" Content="Add Care Giver" Tag="Add"                             />
+                <NavigationViewItem x:ConnectionId='6' x:Name="mnuAddTake" Icon="Add" Content="Add Care Recipients" Tag="Add"                             />
+            </NavigationView.MenuItems>
+            <Frame x:ConnectionId='7' x:Name="contentFrame">
+                <Grid>
+                    <ProgressRing x:ConnectionId='8' x:Name="prgCareGiver" IsActive="True" Width="50" Height="50"/>
+                    <ListBox x:ConnectionId='9' x:Name="careGiverListBox" Width="Auto" Margin="0,12,0,0" VerticalAlignment="Top">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0,0,0,17">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Grid.Row="0" Text="{Binding Id}" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="0">
+                                        <TextBlock Grid.Row="1" Text="{Binding firstName}" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                        <TextBlock Grid.Row="1" Text="{Binding lastName}" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                        <TextBlock Text="|" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                        <TextBlock Text="Role:" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                        <TextBlock Grid.Row="1" Text="{Binding role}" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                        <TextBlock Text="|" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                        <TextBlock Text="Workplace ID:" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                        <TextBlock Grid.Row="1" Text="{Binding careCenterId}" TextWrapping="NoWrap" Margin="6,0,0,0" Style="{ThemeResource BodyTextBlockStyle }" Foreground="{ThemeResource SystemControlForegroundAccentBrush}" VerticalAlignment="Bottom"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Frame>
+        </NavigationView>
+    </Grid>
+</Page>
+
